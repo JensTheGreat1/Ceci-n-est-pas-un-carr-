@@ -1,0 +1,129 @@
+#jnsdan {
+
+    p {
+        height: 100vh;
+        padding-top: 50vh;
+        padding-bottom: 50vh;
+        font-family: 'Orbitron', sans-serif;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2rem;
+        text-shadow: 0 0 1vh rgba(97, 218, 251, 1);
+        animation: textflicker 1.5s infinite alternate-reverse;
+    }
+
+
+    .cubes-container {
+        position: relative;
+        transform: translateX(-10vw) translateY(10vw);
+        // animation: fadein 0.8s ease-out;   
+    }
+
+    .Vanilla {
+	    cursor: pointer;
+        animation: float 3s infinite ease-in-out alternate;
+    }
+
+    .cube-container {
+        width: 20vw;
+        height: 20vw;
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+    
+    .cube-side {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: white;
+	    box-shadow: inset #61dafb 0 0 0vw;
+        outline: 0px solid #8de6ff;
+        animation: flicker 1.5s infinite alternate;
+        box-shadow: inset 0 0 0vw #61dafb,
+        #61dafb 0 0 0vw;
+    }
+    
+    .cube-side-front {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateY(0deg) translateZ(10vw);
+    }
+    
+    .cube-side-back {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateX(180deg) translateZ(10vw);
+    }
+    
+    .cube-side-left {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateY(-90deg) translateZ(10vw);
+    }
+    
+    .cube-side-right {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateY(90deg) translateZ(10vw);
+    }
+    
+    .cube-side-top {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateX(90deg) translateZ(10vw);
+    }
+    
+    .cube-side-bottom {
+        transform-origin: 50% 50%;
+        will-change: transform;
+        transform: rotateX(-90deg) translateZ(10vw);
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotateY(77deg) rotateX(-5.5deg);
+        }
+        100% {
+            transform: rotateY(437deg) rotateX(354.5deg);
+        }
+    }
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes flicker {
+        0% {
+            opacity: .3;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes textflicker {
+        0% {
+            text-shadow: 0 0 .2vh rgba(97, 218, 251, 1);
+        }
+        100% {
+            text-shadow: 0 0 1vh rgba(97, 218, 251, 1);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(28px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+      
+}
