@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 ScrollTrigger.defaults({
     markers: false,
     invalidateOnRefresh: true,
